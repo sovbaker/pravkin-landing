@@ -22,6 +22,8 @@ jobs:
           FTP_IP: ${{ secrets.FTP_IP }}
           FTP_USER: ${{ secrets.FTP_USER }}
           LFTP_PASSWORD: ${{ secrets.FTP_PASS }}
+          # docroot домена правкин.рф (punycode) на reg.ru: www/<домен>/
+          DOMAIN_DIR: xn--80aeshqhh.xn--p1ai
         run: |
           cfg="set cmd:fail-exit true; set ssl:verify-certificate no; set net:timeout 20; set net:max-retries 2;"
           # тихо определяем корневую папку сайта, листинг в логи не выводим
@@ -30,6 +32,9 @@ jobs:
           for cand in public_html www httpdocs htdocs; do
             if printf '%s\n' "$listing" | grep -qx "$cand/"; then dir="$cand"; break; fi
           done
+          # внутри может быть папка конкретного домена (структура reg.ru)
+          sub=$(lftp -c "$cfg open --env-password -u \"$FTP_USER\" \"$FTP_IP\"; cd \"$dir\"; cls -1F" 2>/dev/null || true)
+          if printf '%s\n' "$sub" | grep -qx "$DOMAIN_DIR/"; then dir="$dir/$DOMAIN_DIR"; fi
           echo "Загружаю index.html в: $dir"
           lftp -c "$cfg open --env-password -u \"$FTP_USER\" \"$FTP_IP\"; cd \"$dir\"; put -O . index.html"
           echo "Готово"
