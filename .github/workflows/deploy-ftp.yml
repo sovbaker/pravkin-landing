@@ -1,0 +1,35 @@
+name: Deploy to FTP hosting
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+concurrency:
+  group: ftp-deploy
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install lftp
+        run: sudo apt-get update -qq && sudo apt-get install -y -qq lftp
+
+      - name: Upload index.html
+        env:
+          FTP_IP: ${{ secrets.FTP_IP }}
+          FTP_USER: ${{ secrets.FTP_USER }}
+          LFTP_PASSWORD: ${{ secrets.FTP_PASS }}
+        run: |
+          cfg="set cmd:fail-exit true; set ssl:verify-certificate no; set net:timeout 20; set net:max-retries 2;"
+          # тихо определяем корневую папку сайта, листинг в логи не выводим
+          listing=$(lftp -c "$cfg open --env-password -u \"$FTP_USER\" \"$FTP_IP\"; cls -1F" 2>/dev/null || true)
+          dir="."
+          for cand in public_html www httpdocs htdocs; do
+            if printf '%s\n' "$listing" | grep -qx "$cand/"; then dir="$cand"; break; fi
+          done
+          echo "Загружаю index.html в: $dir"
+          lftp -c "$cfg open --env-password -u \"$FTP_USER\" \"$FTP_IP\"; cd \"$dir\"; put -O . index.html"
+          echo "Готово"
