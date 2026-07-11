@@ -1,0 +1,725 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Правкин — правки на вашем сайте за 24 часа | Tilda, WordPress, Bitrix</title>
+  <meta name="description" content="Поменять цены, тексты, фото или починить форму на сайте — напишите в Telegram своими словами. Оценка за 15 минут, правка за 24 часа, оплата после проверки. От 990 ₽.">
+  <meta property="og:title" content="Правкин — правки на вашем сайте за 24 часа">
+  <meta property="og:description" content="Без ТЗ, договоров и ожидания: опишите задачу в Telegram, через 15 минут узнаете цену. Tilda, WordPress, Bitrix. От 990 ₽.">
+  <meta property="og:type" content="website">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;600;900&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+</head>
+<body>
+<style>
+  :root {
+    --paper: #FBFAF8;
+    --ink: #17222E;
+    --ink-2: #55636F;
+    --line: #E5E3DC;
+    --card: #FFFFFF;
+    --card-2: #F3F1EA;
+    --red: #CE4238;
+    --red-soft: rgba(206, 66, 56, 0.09);
+    --tg: #1780B8;
+    --tg-hover: #136C9C;
+    --tg-soft: #E4F2FA;
+    --ok: #2E8F55;
+    --shadow: 0 1px 2px rgba(23, 34, 46, 0.05), 0 12px 32px -12px rgba(23, 34, 46, 0.14);
+    --r-s: 7px;
+    --r-m: 16px;
+    --r-pill: 999px;
+    --mono: "JetBrains Mono", ui-monospace, "SF Mono", Menlo, monospace;
+    --sans: "Golos Text", -apple-system, "Segoe UI", Roboto, sans-serif;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --paper: #10161C;
+      --ink: #E9ECEF;
+      --ink-2: #93A1AD;
+      --line: #26303A;
+      --card: #171F28;
+      --card-2: #151C24;
+      --red: #E8695F;
+      --red-soft: rgba(232, 105, 95, 0.13);
+      --tg: #3BA5DC;
+      --tg-hover: #56B4E4;
+      --tg-soft: rgba(59, 165, 220, 0.14);
+      --ok: #4CB878;
+      --shadow: 0 1px 2px rgba(0, 0, 0, 0.4), 0 14px 36px -12px rgba(0, 0, 0, 0.5);
+    }
+  }
+  :root[data-theme="light"] {
+    --paper: #FBFAF8;
+    --ink: #17222E;
+    --ink-2: #55636F;
+    --line: #E5E3DC;
+    --card: #FFFFFF;
+    --card-2: #F3F1EA;
+    --red: #CE4238;
+    --red-soft: rgba(206, 66, 56, 0.09);
+    --tg: #1780B8;
+    --tg-hover: #136C9C;
+    --tg-soft: #E4F2FA;
+    --ok: #2E8F55;
+    --shadow: 0 1px 2px rgba(23, 34, 46, 0.05), 0 12px 32px -12px rgba(23, 34, 46, 0.14);
+  }
+  :root[data-theme="dark"] {
+    --paper: #10161C;
+    --ink: #E9ECEF;
+    --ink-2: #93A1AD;
+    --line: #26303A;
+    --card: #171F28;
+    --card-2: #151C24;
+    --red: #E8695F;
+    --red-soft: rgba(232, 105, 95, 0.13);
+    --tg: #3BA5DC;
+    --tg-hover: #56B4E4;
+    --tg-soft: rgba(59, 165, 220, 0.14);
+    --ok: #4CB878;
+    --shadow: 0 1px 2px rgba(0, 0, 0, 0.4), 0 14px 36px -12px rgba(0, 0, 0, 0.5);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after { animation: none !important; transition: none !important; }
+  }
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--sans);
+    font-size: 17px;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+  .wrap { max-width: 1080px; margin: 0 auto; padding: 0 24px; }
+  section { padding: 88px 0; }
+  a { color: var(--tg); text-decoration-thickness: 1px; text-underline-offset: 3px; }
+  a:hover { color: var(--tg-hover); }
+  :focus-visible { outline: 2px solid var(--tg); outline-offset: 3px; border-radius: 2px; }
+
+  h1, h2 { font-weight: 900; letter-spacing: -0.015em; line-height: 1.08; text-wrap: balance; }
+  h2 { font-size: clamp(1.65rem, 3.2vw, 2.35rem); margin-bottom: 14px; }
+  .lead { color: var(--ink-2); max-width: 62ch; font-size: 1.04rem; }
+
+  .eyebrow {
+    font-family: var(--mono);
+    font-size: 0.76rem;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    color: var(--ink-2);
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    margin-bottom: 18px;
+  }
+  .eyebrow::before { content: "✱"; color: var(--red); font-size: 0.9rem; }
+
+  /* ---------- шапка ---------- */
+  header { border-bottom: 1px solid var(--line); }
+  .nav { display: flex; align-items: center; gap: 28px; padding: 18px 0; }
+  .brand { font-weight: 900; font-size: 1.22rem; letter-spacing: -0.01em; color: var(--ink); text-decoration: none; }
+  .brand .ast { color: var(--red); }
+  .nav-links { display: flex; gap: 22px; margin-left: auto; }
+  .nav-links a {
+    font-family: var(--mono); font-size: 0.8rem; color: var(--ink-2);
+    text-decoration: none; letter-spacing: 0.02em;
+  }
+  .nav-links a:hover { color: var(--ink); }
+  .nav .btn { margin-left: auto; }
+  .nav-links + .btn { margin-left: 0; }
+
+  /* ---------- кнопки ---------- */
+  .btn {
+    display: inline-flex; align-items: center; gap: 10px;
+    background: var(--tg); color: #fff;
+    font-family: var(--sans); font-weight: 600; font-size: 1rem;
+    padding: 14px 26px; border-radius: var(--r-pill);
+    text-decoration: none; border: none; cursor: pointer;
+    transition: background 0.15s ease, transform 0.15s ease;
+  }
+  .btn:hover { background: var(--tg-hover); color: #fff; transform: translateY(-1px); }
+  .btn svg { flex: none; }
+  .btn.small { padding: 9px 18px; font-size: 0.88rem; }
+  .btn.ghost {
+    background: transparent; color: var(--ink);
+    box-shadow: inset 0 0 0 1.5px var(--line);
+  }
+  .btn.ghost:hover { background: var(--card-2); transform: none; }
+
+  /* ---------- хиро ---------- */
+  .hero { padding: 76px 0 92px; }
+  .hero-grid { display: grid; grid-template-columns: 1.08fr 0.92fr; gap: 56px; align-items: center; }
+  h1 { font-size: clamp(2.3rem, 5vw, 3.55rem); margin-bottom: 22px; }
+  h1 s {
+    text-decoration: none; color: var(--ink-2); position: relative; white-space: nowrap;
+  }
+  h1 s::after {
+    content: ""; position: absolute; left: -2%; right: -2%; top: 54%;
+    height: 0.09em; background: var(--red); border-radius: 2px;
+    transform: scaleX(1); transform-origin: left center;
+    animation: strike 0.5s cubic-bezier(0.7, 0, 0.3, 1) 0.5s backwards;
+  }
+  @keyframes strike { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+  h1 ins {
+    text-decoration: none; color: var(--red); position: relative;
+    animation: penIn 0.45s ease 1.05s backwards; display: inline-block;
+  }
+  @keyframes penIn {
+    from { opacity: 0; transform: translateY(0.25em) rotate(-2deg); }
+    to { opacity: 1; transform: none; }
+  }
+  .hero .lead { margin-bottom: 30px; }
+  .hero-cta { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; margin-bottom: 26px; }
+  .facts { display: flex; gap: 8px 20px; flex-wrap: wrap; }
+  .facts span {
+    font-family: var(--mono); font-size: 0.78rem; color: var(--ink-2);
+    display: inline-flex; align-items: center; gap: 7px;
+  }
+  .facts span::before { content: "✓"; color: var(--ok); font-weight: 600; }
+
+  /* чат */
+  .chat {
+    background: var(--card); border: 1px solid var(--line); border-radius: 20px;
+    box-shadow: var(--shadow); overflow: hidden; max-width: 460px; justify-self: end; width: 100%;
+  }
+  .chat-head {
+    display: flex; align-items: center; gap: 12px;
+    padding: 14px 18px; border-bottom: 1px solid var(--line); background: var(--card);
+  }
+  .chat-ava {
+    width: 38px; height: 38px; border-radius: 50%; background: var(--tg);
+    color: #fff; font-weight: 900; display: grid; place-items: center; font-size: 1.05rem;
+  }
+  .chat-head b { font-size: 0.95rem; display: block; line-height: 1.25; }
+  .chat-head i { font-style: normal; font-size: 0.78rem; color: var(--tg); }
+  .chat-body { padding: 18px; display: flex; flex-direction: column; gap: 10px; background: var(--card-2); }
+  .msg {
+    max-width: 82%; padding: 10px 14px; font-size: 0.9rem; line-height: 1.5;
+    border-radius: 16px; position: relative;
+    opacity: 0; transform: translateY(10px);
+    transition: opacity 0.4s ease, transform 0.4s ease;
+  }
+  .msg.show { opacity: 1; transform: none; }
+  .msg time {
+    display: block; font-family: var(--mono); font-size: 0.66rem;
+    color: var(--ink-2); margin-top: 5px; text-align: right;
+  }
+  .msg.in { background: var(--card); border: 1px solid var(--line); border-bottom-left-radius: 5px; align-self: flex-start; }
+  .msg.out { background: var(--tg-soft); border: 1px solid transparent; border-bottom-right-radius: 5px; align-self: flex-end; }
+  .msg .ok { color: var(--ok); font-weight: 600; }
+  .chat-note {
+    font-family: var(--mono); font-size: 0.72rem; color: var(--ink-2);
+    text-align: center; padding: 12px 16px; border-top: 1px solid var(--line);
+  }
+
+  /* ---------- боли ---------- */
+  .pains { background: var(--card-2); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+  .pain-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; margin: 34px 0 30px; }
+  .pain {
+    background: var(--card); border: 1px solid var(--line); border-radius: var(--r-m);
+    padding: 22px 24px;
+  }
+  .pain p { font-size: 1.02rem; line-height: 1.55; }
+  .pain p::before { content: "«"; color: var(--red); font-weight: 900; }
+  .pain p::after { content: "»"; color: var(--red); font-weight: 900; }
+  .pain span {
+    display: block; margin-top: 12px; font-family: var(--mono);
+    font-size: 0.72rem; color: var(--ink-2); letter-spacing: 0.06em; text-transform: uppercase;
+  }
+  .pains .punch { font-size: 1.15rem; font-weight: 600; max-width: 56ch; }
+  .pains .punch em { font-style: normal; color: var(--red); }
+
+  /* ---------- шаги ---------- */
+  .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-top: 38px; }
+  .step {
+    border: 1px solid var(--line); border-radius: var(--r-m); padding: 26px 24px;
+    background: var(--card); position: relative;
+  }
+  .step b.num {
+    font-family: var(--mono); font-weight: 400; color: var(--red);
+    font-size: 0.8rem; letter-spacing: 0.1em; display: block; margin-bottom: 14px;
+  }
+  .step h3 { font-size: 1.08rem; font-weight: 600; margin-bottom: 10px; line-height: 1.35; }
+  .step p { font-size: 0.93rem; color: var(--ink-2); }
+  .step p b { color: var(--ink); font-weight: 600; }
+
+  /* ---------- что делаем ---------- */
+  .chips { display: flex; flex-wrap: wrap; gap: 9px; margin: 34px 0 30px; max-width: 860px; }
+  .chip {
+    border: 1px solid var(--line); border-radius: var(--r-s);
+    padding: 9px 15px; font-size: 0.92rem; background: var(--card);
+  }
+  .chip.more { color: var(--ink-2); border-style: dashed; }
+  .platforms { display: flex; align-items: baseline; gap: 8px 18px; flex-wrap: wrap; }
+  .platforms b {
+    font-family: var(--mono); font-weight: 400; font-size: 0.76rem;
+    text-transform: uppercase; letter-spacing: 0.12em; color: var(--ink-2);
+  }
+  .platforms span { font-weight: 600; font-size: 0.95rem; }
+  .platforms span small {
+    font-family: var(--mono); font-size: 0.68rem; color: var(--red); font-weight: 400;
+    margin-left: 4px; vertical-align: super;
+  }
+
+  /* ---------- прайс ---------- */
+  .price-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-top: 38px; }
+  .plan {
+    border: 1px solid var(--line); border-radius: var(--r-m); padding: 28px 26px;
+    background: var(--card); display: flex; flex-direction: column; gap: 0; position: relative;
+  }
+  .plan.featured { border: 2px solid var(--tg); box-shadow: var(--shadow); }
+  .plan .tag {
+    position: absolute; top: -12px; left: 24px;
+    font-family: var(--mono); font-size: 0.68rem; letter-spacing: 0.08em;
+    background: var(--tg); color: #fff; border-radius: var(--r-pill); padding: 3px 12px;
+  }
+  .plan .tag.red { background: var(--red); }
+  .plan h3 { font-size: 1.02rem; font-weight: 600; margin-bottom: 14px; }
+  .plan .price { font-family: var(--mono); font-size: 1.85rem; font-variant-numeric: tabular-nums; letter-spacing: -0.02em; }
+  .plan .price small { font-size: 0.95rem; color: var(--ink-2); letter-spacing: 0; }
+  .plan .price s { color: var(--ink-2); font-size: 1.15rem; text-decoration: none; position: relative; margin-right: 6px; }
+  .plan .price s::after {
+    content: ""; position: absolute; left: -3%; right: -3%; top: 52%;
+    height: 2px; background: var(--red); border-radius: 2px;
+  }
+  .plan .unit { font-size: 0.84rem; color: var(--ink-2); margin: 6px 0 18px; }
+  .plan ul { list-style: none; display: flex; flex-direction: column; gap: 9px; margin-bottom: 22px; }
+  .plan li { font-size: 0.9rem; padding-left: 22px; position: relative; color: var(--ink); }
+  .plan li::before { content: "✓"; position: absolute; left: 0; color: var(--ok); font-weight: 600; }
+  .plan li.dim { color: var(--ink-2); }
+  .plan .btn { margin-top: auto; justify-content: center; }
+  .price-note {
+    margin-top: 26px; border: 1px dashed var(--line); border-radius: var(--r-m);
+    padding: 20px 24px; display: flex; gap: 8px 30px; align-items: baseline; flex-wrap: wrap;
+  }
+  .price-note p { font-size: 0.95rem; max-width: 62ch; }
+  .price-note .mono-note { font-family: var(--mono); font-size: 0.74rem; color: var(--ink-2); }
+
+  /* ---------- сравнение ---------- */
+  .compare-scroll { overflow-x: auto; margin-top: 36px; }
+  table.compare { border-collapse: collapse; width: 100%; min-width: 640px; }
+  .compare th, .compare td {
+    text-align: left; padding: 13px 18px; border-bottom: 1px solid var(--line);
+    font-size: 0.92rem; vertical-align: top;
+  }
+  .compare thead th {
+    font-family: var(--mono); font-weight: 400; font-size: 0.74rem;
+    text-transform: uppercase; letter-spacing: 0.1em; color: var(--ink-2);
+    border-bottom: 2px solid var(--line);
+  }
+  .compare tbody th { font-weight: 600; font-size: 0.88rem; white-space: nowrap; padding-left: 0; }
+  .compare td.us { background: var(--tg-soft); font-weight: 600; }
+  .compare td { color: var(--ink-2); }
+  .compare td.us { color: var(--ink); }
+
+  /* ---------- почему недорого ---------- */
+  .why { background: var(--card-2); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+  .why-grid { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 48px; align-items: start; }
+  .why-facts { display: flex; flex-direction: column; gap: 12px; }
+  .why-fact {
+    background: var(--card); border: 1px solid var(--line); border-radius: var(--r-m);
+    padding: 16px 20px; display: flex; gap: 14px; align-items: baseline;
+  }
+  .why-fact b { font-family: var(--mono); font-weight: 400; color: var(--red); font-size: 0.8rem; flex: none; }
+  .why-fact p { font-size: 0.93rem; }
+
+  /* ---------- FAQ ---------- */
+  .faq { max-width: 760px; }
+  .faq details { border-bottom: 1px solid var(--line); }
+  .faq summary {
+    cursor: pointer; list-style: none; display: flex; justify-content: space-between;
+    align-items: baseline; gap: 20px; padding: 19px 2px; font-weight: 600; font-size: 1.01rem;
+  }
+  .faq summary::-webkit-details-marker { display: none; }
+  .faq summary::after { content: "+"; font-family: var(--mono); color: var(--red); font-size: 1.1rem; flex: none; }
+  .faq details[open] summary::after { content: "−"; }
+  .faq details p { padding: 0 2px 20px; color: var(--ink-2); font-size: 0.95rem; max-width: 64ch; }
+
+  /* ---------- финал ---------- */
+  .final { padding-bottom: 110px; }
+  .final-card {
+    background: var(--ink); color: var(--paper); border-radius: 24px;
+    padding: clamp(40px, 6vw, 72px); text-align: center;
+  }
+  :root[data-theme="dark"] .final-card, .dark-final { border: 1px solid var(--line); }
+  @media (prefers-color-scheme: dark) { .final-card { border: 1px solid var(--line); } }
+  .final-card h2 { margin-bottom: 12px; }
+  .final-card h2 ins { text-decoration: none; color: var(--red); }
+  .final-card p { color: color-mix(in srgb, var(--paper) 72%, var(--ink)); max-width: 46ch; margin: 0 auto 30px; }
+  .final-card .btn { font-size: 1.06rem; padding: 16px 34px; }
+  .final-card .after {
+    display: block; margin-top: 22px; font-family: var(--mono);
+    font-size: 0.74rem; color: color-mix(in srgb, var(--paper) 55%, var(--ink));
+  }
+
+  footer { border-top: 1px solid var(--line); padding: 30px 0 44px; }
+  .foot { display: flex; gap: 10px 30px; align-items: baseline; flex-wrap: wrap; }
+  .foot .brand { font-size: 1rem; }
+  .foot span, .foot a { font-family: var(--mono); font-size: 0.74rem; color: var(--ink-2); }
+  .foot .right { margin-left: auto; }
+
+  /* ---------- адаптив ---------- */
+  @media (max-width: 920px) {
+    section { padding: 64px 0; }
+    .hero { padding: 48px 0 64px; }
+    .hero-grid { grid-template-columns: 1fr; gap: 44px; }
+    .chat { justify-self: start; }
+    .pain-grid, .steps, .price-grid { grid-template-columns: 1fr; }
+    .why-grid { grid-template-columns: 1fr; gap: 30px; }
+    .nav-links { display: none; }
+    .nav .btn { margin-left: auto; }
+  }
+</style>
+
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="#top">правкин<span class="ast">✱</span></a>
+    <nav class="nav-links" aria-label="Разделы страницы">
+      <a href="#how">как это работает</a>
+      <a href="#price">цены</a>
+      <a href="#faq">вопросы</a>
+    </nav>
+    <a class="btn small" data-tg href="#" aria-label="Написать в Telegram">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.6 3.1 2.5 10.5c-1.3.5-1.3 1.9.1 2.3l4.8 1.5 1.9 5.9c.4 1.2 1.5 1.4 2.4.5l2.7-2.6 4.9 3.6c.9.5 1.9.2 2.2-1l3-16c.3-1.3-.7-2.1-1.9-1.6zM8.4 13.9l9.4-5.9c.4-.3.9.3.5.6l-7.7 7-.3 4-1.9-5.7z"/></svg>
+      Telegram
+    </a>
+  </div>
+</header>
+
+<main id="top">
+  <!-- ХИРО -->
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <p class="eyebrow">сервис правок для сайтов</p>
+        <h1>Правки на вашем сайте — <s>как-нибудь потом</s> <ins>уже завтра</ins></h1>
+        <p class="lead">Поменять цены, заменить фото, добавить блок, починить форму — напишите нам в Telegram своими словами. Через 15 минут вы знаете цену, в течение суток правка на сайте. Tilda, WordPress, Bitrix — любая платформа.</p>
+        <div class="hero-cta">
+          <a class="btn" data-tg href="#">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.6 3.1 2.5 10.5c-1.3.5-1.3 1.9.1 2.3l4.8 1.5 1.9 5.9c.4 1.2 1.5 1.4 2.4.5l2.7-2.6 4.9 3.6c.9.5 1.9.2 2.2-1l3-16c.3-1.3-.7-2.1-1.9-1.6zM8.4 13.9l9.4-5.9c.4-.3.9.3.5.6l-7.7 7-.3 4-1.9-5.7z"/></svg>
+            Написать в Telegram
+          </a>
+          <a class="btn ghost" href="#price">Сколько стоит</a>
+        </div>
+        <div class="facts">
+          <span>оценка за 15 минут, бесплатно</span>
+          <span>оплата после проверки</span>
+          <span>бэкап перед каждой правкой</span>
+        </div>
+      </div>
+
+      <div>
+        <div class="chat" aria-label="Пример переписки с сервисом в Telegram">
+          <div class="chat-head">
+            <div class="chat-ava" aria-hidden="true">П</div>
+            <div><b>Правкин</b><i>онлайн</i></div>
+          </div>
+          <div class="chat-body">
+            <div class="msg in">Здравствуйте! Сайт на Тильде. Поменяйте цену на маникюр — теперь 2 500 ₽. И уберите баннер про майскую акцию<time>14:02</time></div>
+            <div class="msg out">Добрый день! Посмотрели сайт — это одна правка, 1 490 ₽. Сделаем сегодня до 18:00. Запускаем?<time>14:11</time></div>
+            <div class="msg in">Да, давайте<time>14:12</time></div>
+            <div class="msg out"><span class="ok">Готово ✓</span> Цена 2 500 ₽, баннер скрыт — посмотрите. Перед правкой сохранили копию: если что-то не так, вернём как было<time>16:47</time></div>
+          </div>
+          <div class="chat-note">так выглядит вся работа с нами — переписка в telegram</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- БОЛИ -->
+  <section class="pains">
+    <div class="wrap">
+      <p class="eyebrow">знакомо?</p>
+      <h2>Сайт есть. А того, кто его делал, — уже нет</h2>
+      <div class="pain-grid">
+        <div class="pain">
+          <p>Сайт собирал знакомый в 2019-м. Теперь он не отвечает, а на сайте до сих пор старые цены</p>
+          <span>салон красоты</span>
+        </div>
+        <div class="pain">
+          <p>Боюсь сама лезть в конструктор: один раз нажала не туда — поехала вся главная</p>
+          <span>студия английского</span>
+        </div>
+        <div class="pain">
+          <p>Фрилансеру нужно ТЗ, предоплата, и начнёт он «со следующего вторника»</p>
+          <span>автосервис</span>
+        </div>
+        <div class="pain">
+          <p>Агентство просит 15 000 ₽ в месяц. У меня правок — три штуки в квартал</p>
+          <span>стоматология</span>
+        </div>
+      </div>
+      <p class="punch">Мы сделали сервис, где ничего этого не нужно: <em>ни ТЗ, ни договоров, ни ожидания</em>. Просто чат, в котором ваш сайт приводят в порядок.</p>
+    </div>
+  </section>
+
+  <!-- КАК РАБОТАЕТ -->
+  <section id="how">
+    <div class="wrap">
+      <p class="eyebrow">как это работает</p>
+      <h2>Три шага — и правка на сайте</h2>
+      <div class="steps">
+        <div class="step">
+          <b class="num">шаг 01</b>
+          <h3>Опишите задачу своими словами</h3>
+          <p>Текстом, скриншотом или голосовым — в Telegram. <b>Без ТЗ:</b> «поменяйте номер телефона в шапке» — уже достаточно.</p>
+        </div>
+        <div class="step">
+          <b class="num">шаг 02</b>
+          <h3>Через 15 минут — цена и срок</h3>
+          <p>Фиксированная цена <b>до начала работ</b> — никаких «по факту вышло больше». Подскажем, как безопасно выдать доступ и как забрать его после.</p>
+        </div>
+        <div class="step">
+          <b class="num">шаг 03</b>
+          <h3>Проверяете — и платите</h3>
+          <p>Перед правкой — резервная копия. Показываем результат, вы проверяете, <b>оплата после</b>: СБП, карта или счёт для ИП и ООО.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ЧТО ДЕЛАЕМ -->
+  <section style="padding-top: 0;">
+    <div class="wrap">
+      <p class="eyebrow">что делаем</p>
+      <h2>Любая рутина по сайту</h2>
+      <div class="chips">
+        <span class="chip">Заменить тексты и цены</span>
+        <span class="chip">Обновить фото и баннеры</span>
+        <span class="chip">Добавить или скрыть блок</span>
+        <span class="chip">Починить форму заявок</span>
+        <span class="chip">Обновить контакты и карту</span>
+        <span class="chip">Новая страница или раздел</span>
+        <span class="chip">Подключить домен и SSL</span>
+        <span class="chip">Ускорить загрузку</span>
+        <span class="chip">Поправить мобильную версию</span>
+        <span class="chip">Подключить аналитику</span>
+        <span class="chip">Интеграция с CRM и оплатой</span>
+        <span class="chip">Перенести сайт</span>
+        <span class="chip more">…и почти всё остальное — спросите</span>
+      </div>
+      <div class="platforms">
+        <b>платформы</b>
+        <span>Tilda<small>чаще всего</small></span>
+        <span>WordPress</span>
+        <span>1С-Битрикс</span>
+        <span>Wix</span>
+        <span>Craftum</span>
+        <span>uKit</span>
+        <span>самописный HTML</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ПРАЙС -->
+  <section id="price" style="padding-top: 0;">
+    <div class="wrap">
+      <p class="eyebrow">цены</p>
+      <h2>Просто, как в кофейне</h2>
+      <p class="lead">Правка — задача до 30 минут работы: поменять цены на странице, заменить десяток фото, поправить кнопку или форму. Если задача больше — скажем заранее.</p>
+      <div class="price-grid">
+        <div class="plan">
+          <p class="tag red">первая — 990 ₽</p>
+          <h3>Разовая правка</h3>
+          <p class="price"><s>1 490</s>990 <small>₽</small></p>
+          <p class="unit">за задачу до 30 минут работы, дальше — 1 490 ₽</p>
+          <ul>
+            <li>в течение 24 часов</li>
+            <li>фикс-цена до начала работ</li>
+            <li>оплата после проверки</li>
+            <li>бэкап + неделя гарантии</li>
+          </ul>
+          <a class="btn ghost" data-tg href="#">Заказать правку</a>
+        </div>
+        <div class="plan">
+          <h3>Пакет 5 правок</h3>
+          <p class="price">5 990 <small>₽</small></p>
+          <p class="unit">1 198 ₽ за правку, действует 3 месяца</p>
+          <ul>
+            <li>всё из разовой правки</li>
+            <li>приоритетная очередь</li>
+            <li>остаток пакета — в чате</li>
+            <li>для сезонных обновлений</li>
+          </ul>
+          <a class="btn ghost" data-tg href="#">Взять пакет</a>
+        </div>
+        <div class="plan featured">
+          <p class="tag">сайт под присмотром</p>
+          <h3>Подписка</h3>
+          <p class="price">9 900 <small>₽ / мес</small></p>
+          <p class="unit">для сайтов, которые живут и меняются</p>
+          <ul>
+            <li>до 10 правок в месяц</li>
+            <li>реакция от 2 часов</li>
+            <li>мониторинг сайта 24/7 — если упадёт, узнаем раньше вас</li>
+            <li>отчёт в конце месяца</li>
+          </ul>
+          <a class="btn" data-tg href="#">Обсудить подписку</a>
+        </div>
+      </div>
+      <div class="price-note">
+        <p>Задача больше 30 минут — новая страница, интеграция, переезд сайта? Оценим бесплатно и назовём фикс-цену до старта, обычно от 2 900 ₽.</p>
+        <span class="mono-note">для сравнения: час агентства — 2 400–3 800 ₽</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- СРАВНЕНИЕ -->
+  <section style="padding-top: 0;">
+    <div class="wrap">
+      <p class="eyebrow">с чем сравнить</p>
+      <h2>Фрилансер, агентство или мы</h2>
+      <div class="compare-scroll">
+        <table class="compare">
+          <thead>
+            <tr><th scope="col"></th><th scope="col">Фрилансер</th><th scope="col">Агентство</th><th scope="col">Правкин</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">Старт работ</th>
+              <td>когда ответит</td>
+              <td>после договора</td>
+              <td class="us">сегодня</td>
+            </tr>
+            <tr>
+              <th scope="row">Постановка задачи</th>
+              <td>нужно ТЗ</td>
+              <td>нужно ТЗ и созвон</td>
+              <td class="us">своими словами в чате</td>
+            </tr>
+            <tr>
+              <th scope="row">Цена</th>
+              <td>от 500 ₽ + поиск, торг и риски</td>
+              <td>от 15 000 ₽/мес</td>
+              <td class="us">от 990 ₽ за правку</td>
+            </tr>
+            <tr>
+              <th scope="row">Оплата</th>
+              <td>обычно предоплата</td>
+              <td>по договору</td>
+              <td class="us">после проверки</td>
+            </tr>
+            <tr>
+              <th scope="row">Если что-то сломалось</th>
+              <td>как повезёт</td>
+              <td>по SLA</td>
+              <td class="us">бэкап — вернём как было</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- ПОЧЕМУ НЕДОРОГО -->
+  <section class="why">
+    <div class="wrap why-grid">
+      <div>
+        <p class="eyebrow">почему так</p>
+        <h2>Почему правка стоит 1 490 ₽, а не час по 2 400 ₽</h2>
+        <p class="lead">Рутинную часть — найти нужный блок, поменять содержимое, проверить вёрстку на телефоне — выполняют AI-агенты. Инженер ставит им задачу, просматривает каждое изменение до публикации и отвечает вам в чате. Мы тратим на задачу минуты, а не часы, — поэтому и цена честная.</p>
+      </div>
+      <div class="why-facts">
+        <div class="why-fact"><b>01</b><p>AI делает — живой инженер проверяет каждое изменение</p></div>
+        <div class="why-fact"><b>02</b><p>Перед любой правкой — резервная копия сайта</p></div>
+        <div class="why-fact"><b>03</b><p>Вы платите за результат, а не за часы работы</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq">
+    <div class="wrap">
+      <p class="eyebrow">вопросы</p>
+      <h2>Что обычно спрашивают</h2>
+      <div class="faq" style="margin-top: 26px;">
+        <details>
+          <summary>Безопасно ли давать вам доступ к сайту?</summary>
+          <p>Мы подскажем, как создать для нас отдельный доступ, не отдавая свой: на Тильде — «доступ для редактирования», на WordPress — отдельную учётную запись. После работ вы отключаете его в один клик. Доступы храним в менеджере секретов, по запросу подписываем NDA.</p>
+        </details>
+        <details>
+          <summary>Что считается одной правкой?</summary>
+          <p>Одна задача до ~30 минут работы: обновить цены на странице, заменить 5–10 фото, поправить форму или кнопку. Если задача тянет на две правки — скажем об этом до начала работ, а не после.</p>
+        </details>
+        <details>
+          <summary>А если после правки что-то сломается?</summary>
+          <p>Перед каждой правкой делаем резервную копию. Если что-то пошло не так — бесплатно вернём как было. На каждую правку — неделя гарантии: заметили проблему — исправим без доплат.</p>
+        </details>
+        <details>
+          <summary>Какие сайты берёте?</summary>
+          <p>Tilda, WordPress, 1С-Битрикс, Wix, Craftum, uKit и самописные сайты на HTML. Если задачу взять не сможем — скажем сразу после оценки, вы ничего не платите.</p>
+        </details>
+        <details>
+          <summary>Как оплатить?</summary>
+          <p>СБП или карта — для физлиц, счёт — для ИП и ООО. Чек присылаем прямо в чат. Разовые правки оплачиваются после того, как вы проверили результат.</p>
+        </details>
+        <details>
+          <summary>Кто делает правки — роботы?</summary>
+          <p>Команда инженеров плюс AI-агенты. Агенты выполняют рутину, но каждое изменение до публикации просматривает живой разработчик — он же отвечает вам в чате. Для вас это значит скорость и низкую цену без «робот что-то сломал и молчит».</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- ФИНАЛ -->
+  <section class="final" style="padding-top: 8px;">
+    <div class="wrap">
+      <div class="final-card">
+        <h2>Опишите первую правку <ins>прямо сейчас</ins></h2>
+        <p>Это бесплатно и ни к чему не обязывает: через 15 минут вы будете знать точную цену и срок.</p>
+        <a class="btn" data-tg href="#">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.6 3.1 2.5 10.5c-1.3.5-1.3 1.9.1 2.3l4.8 1.5 1.9 5.9c.4 1.2 1.5 1.4 2.4.5l2.7-2.6 4.9 3.6c.9.5 1.9.2 2.2-1l3-16c.3-1.3-.7-2.1-1.9-1.6zM8.4 13.9l9.4-5.9c.4-.3.9.3.5.6l-7.7 7-.3 4-1.9-5.7z"/></svg>
+          Написать в Telegram
+        </a>
+        <span class="after">отвечаем каждый день с 10:00 до 22:00 мск</span>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap foot">
+    <a class="brand" href="#top">правкин<span class="ast">✱</span></a>
+    <span>сервис правок для сайтов</span>
+    <a data-tg href="#">telegram</a>
+    <span class="right">© 2026 · этот лендинг мы, конечно, сверстали сами</span>
+  </div>
+</footer>
+
+<script>
+  var TG_LINK = "https://t.me/site_editor_ru_bot";
+  document.querySelectorAll("[data-tg]").forEach(function (el) {
+    el.href = TG_LINK;
+    el.target = "_blank";
+    el.rel = "noopener";
+  });
+
+  // сообщения в чате появляются по очереди
+  var msgs = document.querySelectorAll(".msg");
+  var reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if (reduced) {
+    msgs.forEach(function (m) { m.classList.add("show"); });
+  } else {
+    var chat = document.querySelector(".chat");
+    var started = false;
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting && !started) {
+          started = true;
+          msgs.forEach(function (m, i) {
+            setTimeout(function () { m.classList.add("show"); }, 400 + i * 650);
+          });
+          io.disconnect();
+        }
+      });
+    }, { threshold: 0.4 });
+    io.observe(chat);
+  }
+</script>
+</body>
+</html>
