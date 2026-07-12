@@ -36,5 +36,5 @@ jobs:
           sub=$(lftp -c "$cfg open --env-password -u \"$FTP_USER\" \"$FTP_IP\"; cd \"$dir\"; cls -1F" 2>/dev/null || true)
           if printf '%s\n' "$sub" | grep -qx "$DOMAIN_DIR/"; then dir="$dir/$DOMAIN_DIR"; fi
           echo "Загружаю файлы сайта в: $dir"
-          lftp -c "$cfg open --env-password -u \"$FTP_USER\" \"$FTP_IP\"; cd \"$dir\"; put -O . index.html; put -O . offer.html; put -O . privacy.html; put -O . .htaccess"
+          lftp -c "$cfg open --env-password -u \"$FTP_USER\" \"$FTP_IP\"; cd \"$dir\"; put -O . index.html; put -O . offer.html; put -O . privacy.html; put -O . .htaccess; put -O . favicon.ico; put -O . favicon.svg; put -O . apple-touch-icon.png; put -O . icon-192.png; put -O . icon-512.png; put -O . site.webmanifest"
           echo "Готово"

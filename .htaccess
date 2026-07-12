@@ -2,6 +2,9 @@
 AddDefaultCharset UTF-8
 DirectoryIndex index.html
 
+# MIME-тип манифеста иконок — в mime.types общего хостинга его может не быть
+AddType application/manifest+json .webmanifest
+
 # Человекочитаемые адреса юридических страниц: /offer → offer.html, /privacy → privacy.html
 # Правило общее: запрос без расширения, для которого есть одноимённый .html, отдаётся как .html.
 <IfModule mod_rewrite.c>
