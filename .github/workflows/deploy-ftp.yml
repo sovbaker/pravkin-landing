@@ -17,7 +17,7 @@ jobs:
       - name: Install lftp
         run: sudo apt-get update -qq && sudo apt-get install -y -qq lftp
 
-      - name: Upload index.html
+      - name: Upload site files
         env:
           FTP_IP: ${{ secrets.FTP_IP }}
           FTP_USER: ${{ secrets.FTP_USER }}
@@ -35,6 +35,6 @@ jobs:
           # внутри может быть папка конкретного домена (структура reg.ru)
           sub=$(lftp -c "$cfg open --env-password -u \"$FTP_USER\" \"$FTP_IP\"; cd \"$dir\"; cls -1F" 2>/dev/null || true)
           if printf '%s\n' "$sub" | grep -qx "$DOMAIN_DIR/"; then dir="$dir/$DOMAIN_DIR"; fi
-          echo "Загружаю index.html в: $dir"
-          lftp -c "$cfg open --env-password -u \"$FTP_USER\" \"$FTP_IP\"; cd \"$dir\"; put -O . index.html"
+          echo "Загружаю файлы сайта в: $dir"
+          lftp -c "$cfg open --env-password -u \"$FTP_USER\" \"$FTP_IP\"; cd \"$dir\"; put -O . index.html; put -O . offer.html; put -O . privacy.html; put -O . .htaccess"
           echo "Готово"

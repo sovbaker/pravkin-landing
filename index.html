@@ -371,10 +371,17 @@
   }
 
   footer { border-top: 1px solid var(--line); padding: 30px 0 44px; }
+  .foot-wrap { display: flex; flex-direction: column; gap: 16px; }
   .foot { display: flex; gap: 10px 30px; align-items: baseline; flex-wrap: wrap; }
   .foot .brand { font-size: 1rem; }
   .foot span, .foot a { font-family: var(--mono); font-size: 0.74rem; color: var(--ink-2); }
+  .foot a { text-decoration: none; }
+  .foot a:hover { color: var(--ink); }
   .foot .right { margin-left: auto; }
+  .requisites { display: flex; gap: 6px 22px; flex-wrap: wrap; padding-top: 15px; border-top: 1px solid var(--line); }
+  .requisites span, .requisites a { font-family: var(--mono); font-size: 0.72rem; color: var(--ink-2); }
+  .requisites a { text-decoration: none; }
+  .requisites a:hover { color: var(--ink); }
 
   /* ---------- адаптив ---------- */
   @media (max-width: 920px) {
@@ -696,11 +703,22 @@
 </main>
 
 <footer>
-  <div class="wrap foot">
-    <a class="brand" href="#top">правкин<span class="ast">✱</span></a>
-    <span>сервис правок для сайтов</span>
-    <a data-tg href="#">telegram</a>
-    <span class="right">© 2026 · этот лендинг мы, конечно, сверстали сами</span>
+  <div class="wrap foot-wrap">
+    <div class="foot">
+      <a class="brand" href="#top">правкин<span class="ast">✱</span></a>
+      <span>сервис правок для сайтов</span>
+      <a data-tg href="#">telegram</a>
+      <a href="/offer">оферта</a>
+      <a href="/privacy">политика конфиденциальности</a>
+      <span class="right">© 2026 · этот лендинг мы, конечно, сверстали сами</span>
+    </div>
+    <div class="requisites">
+      <span>ИП Хабибулин Ильдар Рустамович</span>
+      <span>ИНН 631901922914</span>
+      <span>ОГРНИП 326632700103992</span>
+      <a href="mailto:khabibulin.ir@gmail.com">khabibulin.ir@gmail.com</a>
+      <span>+7&nbsp;993&nbsp;905-55-97</span>
+    </div>
   </div>
 </footer>
 
