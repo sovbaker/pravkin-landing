@@ -1,0 +1,14 @@
+# Правкин — статический лендинг на общем хостинге (reg.ru)
+AddDefaultCharset UTF-8
+DirectoryIndex index.html
+
+# Человекочитаемые адреса юридических страниц: /offer → offer.html, /privacy → privacy.html
+# Правило общее: запрос без расширения, для которого есть одноимённый .html, отдаётся как .html.
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteCond %{REQUEST_FILENAME}.html -f
+  RewriteRule ^(.+?)/?$ $1.html [L]
+</IfModule>

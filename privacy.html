@@ -1,0 +1,210 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Политика конфиденциальности — Правкин</title>
+  <meta name="description" content="Политика обработки персональных данных сервиса «Правкин». Оператор — ИП Хабибулин И. Р. Порядок обработки, хранения и защиты данных по 152-ФЗ.">
+  <meta name="robots" content="index, follow">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;600;900&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+</head>
+<body>
+<style>
+  :root {
+    --paper: #FBFAF8;
+    --ink: #17222E;
+    --ink-2: #55636F;
+    --line: #E5E3DC;
+    --card: #FFFFFF;
+    --card-2: #F3F1EA;
+    --red: #CE4238;
+    --tg: #1780B8;
+    --tg-hover: #136C9C;
+    --r-s: 7px;
+    --r-m: 16px;
+    --r-pill: 999px;
+    --mono: "JetBrains Mono", ui-monospace, "SF Mono", Menlo, monospace;
+    --sans: "Golos Text", -apple-system, "Segoe UI", Roboto, sans-serif;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --paper: #10161C; --ink: #E9ECEF; --ink-2: #93A1AD; --line: #26303A;
+      --card: #171F28; --card-2: #151C24; --red: #E8695F; --tg: #3BA5DC; --tg-hover: #56B4E4;
+    }
+  }
+  :root[data-theme="light"] {
+    --paper: #FBFAF8; --ink: #17222E; --ink-2: #55636F; --line: #E5E3DC;
+    --card: #FFFFFF; --card-2: #F3F1EA; --red: #CE4238; --tg: #1780B8; --tg-hover: #136C9C;
+  }
+  :root[data-theme="dark"] {
+    --paper: #10161C; --ink: #E9ECEF; --ink-2: #93A1AD; --line: #26303A;
+    --card: #171F28; --card-2: #151C24; --red: #E8695F; --tg: #3BA5DC; --tg-hover: #56B4E4;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--paper); color: var(--ink);
+    font-family: var(--sans); font-size: 16px; line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+  .wrap { max-width: 820px; margin: 0 auto; padding: 0 24px; }
+  a { color: var(--tg); text-underline-offset: 3px; }
+  a:hover { color: var(--tg-hover); }
+  :focus-visible { outline: 2px solid var(--tg); outline-offset: 3px; border-radius: 2px; }
+
+  header { border-bottom: 1px solid var(--line); position: sticky; top: 0; background: color-mix(in srgb, var(--paper) 88%, transparent); backdrop-filter: blur(8px); z-index: 5; }
+  .nav { display: flex; align-items: center; gap: 20px; padding: 16px 0; }
+  .brand { font-weight: 900; font-size: 1.16rem; letter-spacing: -0.01em; color: var(--ink); text-decoration: none; }
+  .brand .ast { color: var(--red); }
+  .back { margin-left: auto; font-family: var(--mono); font-size: 0.8rem; color: var(--ink-2); text-decoration: none; }
+  .back:hover { color: var(--ink); }
+
+  article { padding: 52px 0 40px; }
+  .eyebrow {
+    font-family: var(--mono); font-size: 0.74rem; text-transform: uppercase;
+    letter-spacing: 0.14em; color: var(--ink-2); display: flex; align-items: center; gap: 9px; margin-bottom: 16px;
+  }
+  .eyebrow::before { content: "✱"; color: var(--red); }
+  h1 { font-weight: 900; letter-spacing: -0.015em; line-height: 1.12; font-size: clamp(1.7rem, 4vw, 2.4rem); margin-bottom: 12px; text-wrap: balance; }
+  .meta { font-family: var(--mono); font-size: 0.78rem; color: var(--ink-2); margin-bottom: 8px; }
+  .intro { color: var(--ink-2); font-size: 1rem; margin: 22px 0 8px; }
+
+  h2 {
+    font-size: 1.16rem; font-weight: 900; letter-spacing: -0.01em; line-height: 1.3;
+    margin: 40px 0 12px; padding-top: 8px; scroll-margin-top: 80px;
+  }
+  h2 .n { font-family: var(--mono); font-weight: 400; color: var(--red); font-size: 0.9rem; margin-right: 10px; }
+  p { margin: 0 0 12px; }
+  .clause b { font-weight: 600; }
+  ul, ol { margin: 0 0 12px; padding-left: 22px; }
+  li { margin-bottom: 7px; }
+  strong { font-weight: 600; }
+
+  .req {
+    background: var(--card); border: 1px solid var(--line); border-radius: var(--r-m);
+    padding: 22px 24px; margin: 20px 0; font-size: 0.94rem;
+  }
+  .req dl { display: grid; grid-template-columns: max-content 1fr; gap: 6px 18px; }
+  .req dt { font-family: var(--mono); font-size: 0.74rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--ink-2); padding-top: 2px; }
+  .req dd { font-weight: 500; }
+  @media (max-width: 560px) { .req dl { grid-template-columns: 1fr; gap: 2px 0; } .req dt { margin-top: 8px; } }
+
+  .toc { background: var(--card-2); border: 1px solid var(--line); border-radius: var(--r-m); padding: 18px 22px; margin: 24px 0 8px; }
+  .toc b { font-family: var(--mono); font-weight: 400; font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.12em; color: var(--ink-2); display: block; margin-bottom: 10px; }
+  .toc ol { columns: 2; column-gap: 28px; padding-left: 18px; font-size: 0.9rem; margin: 0; }
+  .toc a { text-decoration: none; }
+  .toc a:hover { text-decoration: underline; }
+  @media (max-width: 560px) { .toc ol { columns: 1; } }
+
+  footer { border-top: 1px solid var(--line); padding: 28px 0 50px; margin-top: 40px; }
+  .foot { display: flex; gap: 10px 26px; align-items: baseline; flex-wrap: wrap; }
+  .foot .brand { font-size: 1rem; }
+  .foot a, .foot span { font-family: var(--mono); font-size: 0.74rem; color: var(--ink-2); }
+  .foot a { text-decoration: none; }
+  .foot a:hover { color: var(--ink); }
+  .foot .right { margin-left: auto; }
+</style>
+
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="/">правкин<span class="ast">✱</span></a>
+    <a class="back" href="/">← на главную</a>
+  </div>
+</header>
+
+<main>
+  <article class="wrap">
+    <p class="eyebrow">юридические документы</p>
+    <h1>Политика обработки персональных данных</h1>
+    <p class="meta">Редакция от 12 июля 2026 г. · размещена по адресу https://правкин.рф/privacy</p>
+
+    <p class="intro">Настоящая Политика определяет порядок обработки и защиты персональных данных (далее&nbsp;— ПДн) пользователей сервиса «Правкин» и принята во исполнение требований Федерального закона от 27.07.2006 №&nbsp;152-ФЗ «О персональных данных».</p>
+
+    <div class="toc">
+      <b>Содержание</b>
+      <ol>
+        <li><a href="#p1">Общие положения и оператор</a></li>
+        <li><a href="#p2">Состав обрабатываемых данных</a></li>
+        <li><a href="#p3">Цели обработки</a></li>
+        <li><a href="#p4">Правовые основания</a></li>
+        <li><a href="#p5">Хранение, защита и сроки</a></li>
+        <li><a href="#p6">Передача третьим лицам</a></li>
+        <li><a href="#p7">Telegram и трансграничная передача</a></li>
+        <li><a href="#p8">Cookie и аналитика</a></li>
+        <li><a href="#p9">Права субъекта данных</a></li>
+        <li><a href="#p10">Изменение Политики</a></li>
+      </ol>
+    </div>
+
+    <h2 id="p1"><span class="n">1</span>Общие положения и оператор</h2>
+    <p class="clause">1.1. Оператором персональных данных является Индивидуальный предприниматель Хабибулин Ильдар Рустамович (далее&nbsp;— Оператор).</p>
+    <div class="req">
+      <dl>
+        <dt>Оператор</dt><dd>ИП Хабибулин Ильдар Рустамович</dd>
+        <dt>ИНН</dt><dd>631901922914</dd>
+        <dt>ОГРНИП</dt><dd>326632700103992</dd>
+        <dt>E-mail по ПДн</dt><dd><a href="mailto:khabibulin.ir@gmail.com">khabibulin.ir@gmail.com</a></dd>
+        <dt>Сервис</dt><dd>https://правкин.рф · Telegram-бот @pravkin_rf_bot</dd>
+      </dl>
+    </div>
+    <p class="clause">1.2. Используя сервис «Правкин» (сайт https://правкин.рф и Telegram-бот @pravkin_rf_bot) и предоставляя свои данные, пользователь (далее&nbsp;— Пользователь) подтверждает согласие с настоящей Политикой и даёт согласие на обработку своих персональных данных на изложенных в ней условиях.</p>
+    <p class="clause">1.3. Настоящая Политика применяется к данным Пользователей, которые обращаются к Оператору за услугами по внесению изменений и доработке сайтов (далее&nbsp;— Услуги).</p>
+
+    <h2 id="p2"><span class="n">2</span>Состав обрабатываемых данных</h2>
+    <p class="clause">Оператор обрабатывает минимально необходимый для оказания Услуг объём данных:</p>
+    <p class="clause">2.1. <b>Контактные и идентификационные данные:</b> имя (или имя, указанное в Telegram), Telegram-идентификатор и username, номер телефона и/или адрес электронной почты — если Пользователь их сообщает.</p>
+    <p class="clause">2.2. <b>Содержание обращения:</b> текст задачи, скриншоты, голосовые сообщения и иные материалы, которые Пользователь передаёт для выполнения правки. Пользователю не следует передавать в переписке избыточные персональные данные; переданные по инициативе Пользователя данные обрабатываются для заявленной им цели (выполнения Заказа).</p>
+    <p class="clause">2.3. <b>Данные доступа к сайту Пользователя:</b> логины, пароли, ссылки на панели управления и иные учётные данные, которые Пользователь предоставляет для выполнения работ. Эти данные обрабатываются как конфиденциальная информация (см. п.&nbsp;5.2), используются исключительно для оказания Услуг и не относятся к рекламным или иным сторонним целям.</p>
+    <p class="clause">2.4. <b>Реквизиты для оформления и оплаты:</b> для Пользователей — индивидуальных предпринимателей и юридических лиц — реквизиты для выставления счёта; для всех Пользователей — сведения о платеже (факт и сумма оплаты, адрес для направления кассового чека). Полные данные банковских карт Оператор не получает и не хранит — оплата проходит на стороне банка/платёжного сервиса.</p>
+    <p class="clause">2.5. <b>Технические данные:</b> IP-адрес, файлы cookie, сведения об устройстве и действиях на сайте https://правкин.рф, собираемые системой веб-аналитики (см. раздел&nbsp;8).</p>
+    <p class="clause">2.6. Оператор не запрашивает и намеренно не обрабатывает специальные категории персональных данных.</p>
+
+    <h2 id="p3"><span class="n">3</span>Цели обработки</h2>
+    <p class="clause">Обработка осуществляется в целях: приёма и обработки обращений Пользователей; оценки задач, согласования и выполнения Заказов по внесению правок на сайт; связи с Пользователем через Telegram и иные согласованные каналы; приёма оплаты и направления кассовых чеков (54-ФЗ); исполнения договора (публичной оферты); улучшения работы сайта и качества Услуг; исполнения требований законодательства.</p>
+
+    <h2 id="p4"><span class="n">4</span>Правовые основания</h2>
+    <p class="clause">Правовыми основаниями обработки являются: согласие субъекта персональных данных (ст.&nbsp;6 ч.&nbsp;1 п.&nbsp;1 152-ФЗ); исполнение договора, стороной которого является субъект (публичная оферта, размещённая по адресу https://правкин.рф/offer); исполнение обязанностей, возложенных на Оператора законодательством (в том числе Федеральным законом №&nbsp;54-ФЗ).</p>
+
+    <h2 id="p5"><span class="n">5</span>Хранение, защита и сроки</h2>
+    <p class="clause">5.1. <b>Локализация.</b> Запись, систематизация, накопление, хранение, уточнение и извлечение персональных данных граждан Российской Федерации осуществляются с использованием баз данных, расположенных на территории Российской Федерации (ч.&nbsp;5 ст.&nbsp;18 152-ФЗ). Сайт https://правкин.рф размещён на хостинге в Российской Федерации.</p>
+    <p class="clause">5.2. <b>Защита данных доступа.</b> Предоставленные Пользователем учётные данные и доступы к его сайту хранятся в защищённом менеджере секретов, доступ к ним ограничен и предоставляется только специалистам, выполняющим Заказ. По завершении работ доступы удаляются либо, по рекомендации Оператора, отзываются самим Пользователем; по запросу Оператор подписывает соглашение о неразглашении (NDA).</p>
+    <p class="clause">5.3. <b>Сроки хранения.</b> Данные обращения и Заказа хранятся в течение срока оказания Услуг и последующего периода, необходимого для урегулирования возможных претензий и исполнения требований законодательства (в том числе о бухгалтерском учёте и 54-ФЗ). Данные доступа удаляются по завершении работ или по запросу Пользователя. Пользователь может в любой момент запросить удаление своих данных, направив обращение на khabibulin.ir@gmail.com; данные, которые Оператор обязан хранить по закону, сохраняются в течение установленных законом сроков.</p>
+    <p class="clause">5.4. Оператор принимает необходимые правовые, организационные и технические меры для защиты персональных данных от неправомерного доступа, уничтожения, изменения и распространения (ст.&nbsp;18.1, 19 152-ФЗ). Персональные данные и данные доступа Пользователей не размещаются в публичных репозиториях и системах контроля версий.</p>
+
+    <h2 id="p6"><span class="n">6</span>Передача третьим лицам</h2>
+    <p class="clause">6.1. Персональные данные могут передаваться: платёжному сервису (эквайрингу) — для приёма оплаты и формирования чеков; оператору фискальных данных — в силу требований 54-ФЗ; хостинг-провайдеру в Российской Федерации — как обработчику по поручению Оператора; государственным органам — в случаях и порядке, предусмотренных законодательством.</p>
+    <p class="clause">6.2. Для выполнения работ Оператор может привлекать third-party специалистов и использовать автоматизированные (в том числе основанные на искусственном интеллекте) инструменты. Таким лицам и инструментам передаётся только объём данных, необходимый для выполнения конкретного Заказа; они действуют по поручению и под ответственностью Оператора.</p>
+    <p class="clause">6.3. Оператор не продаёт персональные данные и не передаёт их третьим лицам для их самостоятельных рекламных целей.</p>
+
+    <h2 id="p7"><span class="n">7</span>Telegram и трансграничная передача</h2>
+    <p class="clause">7.1. Основное взаимодействие с Пользователем происходит в мессенджере <b>Telegram</b> через бот @pravkin_rf_bot. Telegram является сторонним сервисом, инфраструктура которого расположена за пределами Российской Федерации, и обрабатывает передаваемые через него сообщения на условиях собственной политики конфиденциальности. Обращаясь к Оператору через Telegram, Пользователь осознаёт, что передача сообщений через данный мессенджер осуществляется его средствами, и соглашается с таким способом связи.</p>
+    <p class="clause">7.2. Пользователь вправе выбрать иной канал связи (например, электронную почту khabibulin.ir@gmail.com), если не желает использовать Telegram.</p>
+    <p class="clause">7.3. Оператор не передаёт данные доступа к сайту Пользователя и платёжные данные через мессенджер сверх необходимого и не размещает их у зарубежных обработчиков без необходимости оказания Услуги.</p>
+
+    <h2 id="p8"><span class="n">8</span>Cookie и аналитика</h2>
+    <p class="clause">8.1. Сайт https://правкин.рф использует файлы cookie и систему веб-аналитики <b>Яндекс Метрика</b> (счётчик №&nbsp;110603272) для обеспечения работы сайта, сбора обезличенной статистики посещений и улучшения Сервиса. В настройках счётчика включена запись действий посетителей (вебвизор, карта кликов), позволяющая анализировать взаимодействие со страницами в обезличенном виде.</p>
+    <p class="clause">8.2. Обработка данных Яндекс Метрикой осуществляется на условиях ООО «ЯНДЕКС» согласно его документам. Пользователь может ограничить сбор данных, отключив cookie в настройках браузера или используя средства блокировки аналитики.</p>
+
+    <h2 id="p9"><span class="n">9</span>Права субъекта данных</h2>
+    <p class="clause">9.1. Пользователь вправе: получать сведения об обработке своих персональных данных; требовать их уточнения, блокирования или уничтожения; отозвать согласие на обработку; обжаловать действия Оператора в уполномоченный орган по защите прав субъектов персональных данных (Роскомнадзор) или в суд.</p>
+    <p class="clause">9.2. Для реализации своих прав, а также для отзыва согласия Пользователь направляет обращение на e-mail khabibulin.ir@gmail.com. Оператор рассматривает обращение в сроки, установленные 152-ФЗ. Отзыв согласия не влияет на законность обработки, осуществлённой до его получения, и на обработку данных, которую Оператор обязан продолжать по закону.</p>
+
+    <h2 id="p10"><span class="n">10</span>Изменение Политики</h2>
+    <p class="clause">10.1. Оператор вправе изменять настоящую Политику. Новая редакция вступает в силу с момента её размещения по адресу https://правкин.рф/privacy, если иное не предусмотрено самой редакцией. Действующая редакция всегда доступна по указанному адресу.</p>
+  </article>
+</main>
+
+<footer>
+  <div class="wrap foot">
+    <a class="brand" href="/">правкин<span class="ast">✱</span></a>
+    <span>ИП Хабибулин И. Р. · ИНН 631901922914</span>
+    <a href="/offer">оферта</a>
+    <a href="/privacy">конфиденциальность</a>
+    <span class="right">© 2026 правкин</span>
+  </div>
+</footer>
+</body>
+</html>
