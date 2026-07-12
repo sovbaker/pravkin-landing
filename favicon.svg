@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <style>
+    g { fill: #CE4238 }
+    @media (prefers-color-scheme: dark) { g { fill: #E8695F } }
+  </style>
+  <g>
+    <rect x="38.5" y="4" width="23" height="92" rx="11.5"/>
+    <rect x="38.5" y="4" width="23" height="92" rx="11.5" transform="rotate(60 50 50)"/>
+    <rect x="38.5" y="4" width="23" height="92" rx="11.5" transform="rotate(120 50 50)"/>
+  </g>
+</svg>
