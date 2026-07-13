@@ -4,9 +4,9 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Правкин — правки на вашем сайте за 24 часа | Tilda, WordPress, Bitrix</title>
-  <meta name="description" content="Поменять цены, тексты, фото или починить форму на сайте — напишите в Telegram своими словами. Оценка за 15 минут, правка за 24 часа, оплата после проверки. От 990 ₽.">
+  <meta name="description" content="Поменять цены, тексты, фото или починить форму на сайте — оставьте заявку или напишите в Telegram своими словами. Оценка за 15 минут, правка за 24 часа, оплата после проверки. От 990 ₽.">
   <meta property="og:title" content="Правкин — правки на вашем сайте за 24 часа">
-  <meta property="og:description" content="Без ТЗ, договоров и ожидания: опишите задачу в Telegram, через 15 минут узнаете цену. Tilda, WordPress, Bitrix. От 990 ₽.">
+  <meta property="og:description" content="Без ТЗ, договоров и ожидания: опишите задачу — через 15 минут узнаете цену. Tilda, WordPress, Bitrix. От 990 ₽.">
   <meta property="og:type" content="website">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -359,6 +359,20 @@
   .faq details[open] summary::after { content: "−"; }
   .faq details p { padding: 0 2px 20px; color: var(--ink-2); font-size: 0.95rem; max-width: 64ch; }
 
+  /* ---------- заявка ---------- */
+  .lead-form { max-width: 760px; }
+  .form-embed {
+    margin-top: 34px; background: var(--card); border: 1px solid var(--line);
+    border-radius: var(--r-m); box-shadow: var(--shadow); overflow: hidden;
+  }
+  .form-embed iframe { display: block; width: 100%; height: clamp(620px, 78vh, 800px); border: 0; }
+  .alt-contacts { margin-top: 22px; display: flex; gap: 10px 24px; flex-wrap: wrap; align-items: baseline; }
+  .alt-contacts b {
+    font-family: var(--mono); font-weight: 400; font-size: 0.76rem;
+    text-transform: uppercase; letter-spacing: 0.12em; color: var(--ink-2);
+  }
+  .alt-contacts a { font-family: var(--mono); font-size: 0.82rem; }
+
   /* ---------- финал ---------- */
   .final { padding-bottom: 110px; }
   .final-card {
@@ -371,6 +385,9 @@
   .final-card h2 ins { text-decoration: none; color: var(--red); }
   .final-card p { color: color-mix(in srgb, var(--paper) 72%, var(--ink)); max-width: 46ch; margin: 0 auto 30px; }
   .final-card .btn { font-size: 1.06rem; padding: 16px 34px; }
+  .final-cta { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+  .final-card .btn.ghost { color: inherit; box-shadow: inset 0 0 0 1.5px color-mix(in srgb, currentColor 32%, transparent); }
+  .final-card .btn.ghost:hover { background: color-mix(in srgb, currentColor 10%, transparent); transform: none; }
   .final-card .after {
     display: block; margin-top: 22px; font-family: var(--mono);
     font-size: 0.74rem; color: color-mix(in srgb, var(--paper) 55%, var(--ink));
@@ -410,10 +427,7 @@
       <a href="#price">цены</a>
       <a href="#faq">вопросы</a>
     </nav>
-    <a class="btn small" data-tg href="#" aria-label="Написать в Telegram">
-      <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.6 3.1 2.5 10.5c-1.3.5-1.3 1.9.1 2.3l4.8 1.5 1.9 5.9c.4 1.2 1.5 1.4 2.4.5l2.7-2.6 4.9 3.6c.9.5 1.9.2 2.2-1l3-16c.3-1.3-.7-2.1-1.9-1.6zM8.4 13.9l9.4-5.9c.4-.3.9.3.5.6l-7.7 7-.3 4-1.9-5.7z"/></svg>
-      Telegram
-    </a>
+    <a class="btn small" href="#zayavka" data-goal="form_cta" data-place="header">Оставить заявку</a>
   </div>
 </header>
 
@@ -424,13 +438,13 @@
       <div>
         <p class="eyebrow">сервис правок для сайтов</p>
         <h1>Правки на вашем сайте — <s>как-нибудь потом</s> <ins>уже завтра</ins></h1>
-        <p class="lead">Поменять цены, заменить фото, добавить блок, починить форму — напишите нам в Telegram своими словами. Через 15 минут вы знаете цену, в течение суток правка на сайте. Tilda, WordPress, Bitrix — любая платформа.</p>
+        <p class="lead">Поменять цены, заменить фото, добавить блок, починить форму — опишите задачу своими словами: в заявке на этой странице или в Telegram. Через 15 минут вы знаете цену, в течение суток правка на сайте. Tilda, WordPress, Bitrix — любая платформа.</p>
         <div class="hero-cta">
-          <a class="btn" data-tg href="#">
+          <a class="btn" href="#zayavka" data-goal="form_cta" data-place="hero">Оставить заявку</a>
+          <a class="btn ghost" data-tg href="#">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.6 3.1 2.5 10.5c-1.3.5-1.3 1.9.1 2.3l4.8 1.5 1.9 5.9c.4 1.2 1.5 1.4 2.4.5l2.7-2.6 4.9 3.6c.9.5 1.9.2 2.2-1l3-16c.3-1.3-.7-2.1-1.9-1.6zM8.4 13.9l9.4-5.9c.4-.3.9.3.5.6l-7.7 7-.3 4-1.9-5.7z"/></svg>
             Написать в Telegram
           </a>
-          <a class="btn ghost" href="#price">Сколько стоит</a>
         </div>
         <div class="facts">
           <span>оценка за 15 минут, бесплатно</span>
@@ -493,7 +507,7 @@
         <div class="step">
           <b class="num">шаг 01</b>
           <h3>Опишите задачу своими словами</h3>
-          <p>Текстом, скриншотом или голосовым — в Telegram. <b>Без ТЗ:</b> «поменяйте номер телефона в шапке» — уже достаточно.</p>
+          <p>В заявке на этой странице или в Telegram — текстом, скриншотом, голосовым. <b>Без ТЗ:</b> «поменяйте номер телефона в шапке» — уже достаточно.</p>
         </div>
         <div class="step">
           <b class="num">шаг 02</b>
@@ -560,7 +574,7 @@
             <li>оплата после проверки</li>
             <li>бэкап + неделя гарантии</li>
           </ul>
-          <a class="btn ghost" data-tg href="#">Заказать правку</a>
+          <a class="btn ghost" href="#zayavka" data-goal="form_cta" data-place="plan_single">Заказать правку</a>
         </div>
         <div class="plan">
           <h3>Пакет 5 правок</h3>
@@ -572,7 +586,7 @@
             <li>остаток пакета — в чате</li>
             <li>для сезонных обновлений</li>
           </ul>
-          <a class="btn ghost" data-tg href="#">Взять пакет</a>
+          <a class="btn ghost" href="#zayavka" data-goal="form_cta" data-place="plan_pack">Взять пакет</a>
         </div>
         <div class="plan featured">
           <p class="tag">сайт под присмотром</p>
@@ -585,7 +599,7 @@
             <li>мониторинг сайта 24/7 — если упадёт, узнаем раньше вас</li>
             <li>отчёт в конце месяца</li>
           </ul>
-          <a class="btn" data-tg href="#">Обсудить подписку</a>
+          <a class="btn" href="#zayavka" data-goal="form_cta" data-place="plan_sub">Обсудить подписку</a>
         </div>
       </div>
       <div class="price-note">
@@ -665,6 +679,10 @@
       <h2>Что обычно спрашивают</h2>
       <div class="faq" style="margin-top: 26px;">
         <details>
+          <summary>У меня не работает Telegram — как с вами связаться?</summary>
+          <p>Да, Telegram в России сейчас работает с перебоями, поэтому основной способ — <a href="#zayavka">форма заявки</a> на этой странице: опишите задачу и оставьте телефон или почту. Также можно написать на khabibulin.ir@gmail.com или позвонить +7&nbsp;993&nbsp;905-55-97. Отвечаем каждый день с 10:00 до 22:00 мск.</p>
+        </details>
+        <details>
           <summary>Безопасно ли давать вам доступ к сайту?</summary>
           <p>Мы подскажем, как создать для нас отдельный доступ, не отдавая свой: на Тильде — «доступ для редактирования», на WordPress — отдельную учётную запись. После работ вы отключаете его в один клик. Доступы храним в менеджере секретов, по запросу подписываем NDA.</p>
         </details>
@@ -692,16 +710,37 @@
     </div>
   </section>
 
+  <!-- ЗАЯВКА -->
+  <section id="zayavka">
+    <div class="wrap">
+      <p class="eyebrow">оставить заявку</p>
+      <h2>Опишите задачу — назовём цену</h2>
+      <p class="lead">Расскажите, что поправить на сайте, и оставьте контакт. В рабочее время — каждый день с 10:00 до 22:00 мск — отвечаем в течение 15 минут: по телефону, на почту или в мессенджере, как вам удобнее.</p>
+      <div class="lead-form">
+        <div class="form-embed" id="form-embed" hidden></div>
+        <p class="alt-contacts">
+          <b>или напрямую</b>
+          <a data-tg href="#">telegram</a>
+          <a href="mailto:khabibulin.ir@gmail.com" data-goal="email_click">khabibulin.ir@gmail.com</a>
+          <a href="tel:+79939055597" data-goal="phone_click">+7 993 905-55-97</a>
+        </p>
+      </div>
+    </div>
+  </section>
+
   <!-- ФИНАЛ -->
   <section class="final" style="padding-top: 8px;">
     <div class="wrap">
       <div class="final-card">
         <h2>Опишите первую правку <ins>прямо сейчас</ins></h2>
         <p>Это бесплатно и ни к чему не обязывает: через 15 минут вы будете знать точную цену и срок.</p>
-        <a class="btn" data-tg href="#">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.6 3.1 2.5 10.5c-1.3.5-1.3 1.9.1 2.3l4.8 1.5 1.9 5.9c.4 1.2 1.5 1.4 2.4.5l2.7-2.6 4.9 3.6c.9.5 1.9.2 2.2-1l3-16c.3-1.3-.7-2.1-1.9-1.6zM8.4 13.9l9.4-5.9c.4-.3.9.3.5.6l-7.7 7-.3 4-1.9-5.7z"/></svg>
-          Написать в Telegram
-        </a>
+        <div class="final-cta">
+          <a class="btn" href="#zayavka" data-goal="form_cta" data-place="final">Оставить заявку</a>
+          <a class="btn ghost" data-tg href="#">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.6 3.1 2.5 10.5c-1.3.5-1.3 1.9.1 2.3l4.8 1.5 1.9 5.9c.4 1.2 1.5 1.4 2.4.5l2.7-2.6 4.9 3.6c.9.5 1.9.2 2.2-1l3-16c.3-1.3-.7-2.1-1.9-1.6zM8.4 13.9l9.4-5.9c.4-.3.9.3.5.6l-7.7 7-.3 4-1.9-5.7z"/></svg>
+            Написать в Telegram
+          </a>
+        </div>
         <span class="after">отвечаем каждый день с 10:00 до 22:00 мск</span>
       </div>
     </div>
@@ -737,6 +776,31 @@
     // цель Метрики: клик по кнопке Telegram
     el.addEventListener("click", function () {
       if (typeof ym === "function") ym(110603272, "reachGoal", "tg_click");
+    });
+  });
+
+  // Яндекс Форма приёма заявок: вставьте ID формы — часть ссылки после forms.yandex.ru/u/
+  // Как создать форму и получить ID — см. README.md. Пока ID пуст, в секции показываются прямые контакты.
+  var YA_FORM_ID = "";
+  var embedBox = document.getElementById("form-embed");
+  if (YA_FORM_ID && embedBox) {
+    var theme = document.documentElement.getAttribute("data-theme");
+    var dark = theme ? theme === "dark" : window.matchMedia("(prefers-color-scheme: dark)").matches;
+    var frame = document.createElement("iframe");
+    frame.src = "https://forms.yandex.ru/u/" + YA_FORM_ID + "/?iframe=1" + (dark ? "&theme=dark" : "");
+    frame.name = "ya-form-" + YA_FORM_ID;
+    frame.title = "Форма заявки";
+    frame.loading = "lazy";
+    embedBox.hidden = false;
+    embedBox.appendChild(frame);
+  }
+
+  // цели Метрики: кнопки «Оставить заявку» и прямые контакты
+  document.querySelectorAll("[data-goal]").forEach(function (el) {
+    el.addEventListener("click", function () {
+      if (typeof ym === "function") {
+        ym(110603272, "reachGoal", el.dataset.goal, el.dataset.place ? { place: el.dataset.place } : undefined);
+      }
     });
   });
 
