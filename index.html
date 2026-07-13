@@ -779,20 +779,33 @@
     });
   });
 
-  // Яндекс Форма приёма заявок: вставьте ID формы — часть ссылки после forms.yandex.ru/u/
-  // Как создать форму и получить ID — см. README.md. Пока ID пуст, в секции показываются прямые контакты.
-  var YA_FORM_ID = "";
+  // Яндекс Форма приёма заявок: полная ссылка на форму
+  // (личные формы — forms.yandex.ru/u/<id>, формы организации — forms.yandex.ru/cloud/<id>)
+  // Как создать форму — см. README.md. Пока ссылка пуста, в секции показываются прямые контакты.
+  var YA_FORM_URL = "https://forms.yandex.ru/cloud/6a55399084227c17ac38bca5";
   var embedBox = document.getElementById("form-embed");
-  if (YA_FORM_ID && embedBox) {
-    var theme = document.documentElement.getAttribute("data-theme");
-    var dark = theme ? theme === "dark" : window.matchMedia("(prefers-color-scheme: dark)").matches;
-    var frame = document.createElement("iframe");
-    frame.src = "https://forms.yandex.ru/u/" + YA_FORM_ID + "/?iframe=1" + (dark ? "&theme=dark" : "");
-    frame.name = "ya-form-" + YA_FORM_ID;
-    frame.title = "Форма заявки";
-    frame.loading = "lazy";
-    embedBox.hidden = false;
-    embedBox.appendChild(frame);
+  if (YA_FORM_URL && embedBox) {
+    var frameAdded = false;
+    var addFrame = function () {
+      if (frameAdded) return;
+      frameAdded = true;
+      var theme = document.documentElement.getAttribute("data-theme");
+      var dark = theme ? theme === "dark" : window.matchMedia("(prefers-color-scheme: dark)").matches;
+      var frame = document.createElement("iframe");
+      frame.src = YA_FORM_URL.replace(/\/+$/, "") + "/?iframe=1" + (dark ? "&theme=dark" : "");
+      frame.name = "ya-form-" + YA_FORM_URL.split("/").filter(Boolean).pop();
+      frame.title = "Форма заявки";
+      embedBox.hidden = false;
+      embedBox.appendChild(frame);
+    };
+    // embed.js Яндекс Форм подгоняет высоту iframe под содержимое (находит его по name);
+    // если скрипт не загрузится, iframe добавится по таймауту с высотой из CSS
+    var s = document.createElement("script");
+    s.src = "https://forms.yandex.ru/_static/embed.js";
+    s.onload = addFrame;
+    s.onerror = addFrame;
+    document.head.appendChild(s);
+    setTimeout(addFrame, 2500);
   }
 
   // цели Метрики: кнопки «Оставить заявку» и прямые контакты
